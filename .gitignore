@@ -1,0 +1,9 @@
+node_modules/
+.env
+.DS_Store
+*.log
+coverage/
+.cache/
+data/tutorials.json
+.server.log
+.server.pid
