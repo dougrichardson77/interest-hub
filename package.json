@@ -1,0 +1,16 @@
+{
+  "name": "interest-tutorial-hub",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Private multi-interest YouTube tutorial dashboard with cached API refreshes.",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "refresh": "node scripts/refresh.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
