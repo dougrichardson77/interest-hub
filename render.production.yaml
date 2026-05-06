@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: interest-tutorial-hub
+    name: interest-tutorial-hub-production
     runtime: node
     plan: starter
     buildCommand: npm install

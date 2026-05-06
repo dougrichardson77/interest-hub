@@ -131,10 +131,7 @@ function bindEvents() {
 
 async function loadAppConfig() {
   try {
-    const response = await fetch("/api/app-config");
-    const payload = await response.json();
-    if (!response.ok) throw new Error(payload.error || "Could not load app config");
-    state.appConfig = payload;
+    state.appConfig = await parseApiResponse(await fetch("/api/app-config"));
   } catch (error) {
     state.meta.lastRefreshError = error.message;
   }
@@ -221,9 +218,7 @@ async function handleSignOut() {
 
 async function loadInterests() {
   try {
-    const response = await apiFetch("/api/interests");
-    const payload = await response.json();
-    if (!response.ok) throw new Error(payload.error || "Could not load interests");
+    const payload = await parseApiResponse(await apiFetch("/api/interests"));
 
     state.interests = payload.interests || [];
     state.activeInterestId = payload.activeInterestId || state.interests[0]?.id || null;
@@ -260,10 +255,11 @@ async function createInterest(event) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ name, searchQueries, topics, trustedChannels })
   });
-  const payload = await response.json();
-
-  if (!response.ok) {
-    state.meta.lastRefreshError = payload.error || "Could not add interest";
+  let payload;
+  try {
+    payload = await parseApiResponse(response);
+  } catch (error) {
+    state.meta.lastRefreshError = error.message || "Could not add interest";
     renderStatus();
     return;
   }
@@ -287,10 +283,11 @@ async function selectInterest(interestId) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ active: true })
   });
-  const payload = await response.json();
-
-  if (!response.ok) {
-    state.meta.lastRefreshError = payload.error || "Could not switch interest";
+  let payload;
+  try {
+    payload = await parseApiResponse(response);
+  } catch (error) {
+    state.meta.lastRefreshError = error.message || "Could not switch interest";
     renderStatus();
     return;
   }
@@ -316,10 +313,11 @@ async function deleteInterest(interestId) {
   const response = await apiFetch(`/api/interests/${encodeURIComponent(interestId)}`, {
     method: "DELETE"
   });
-  const payload = await response.json();
-
-  if (!response.ok) {
-    state.meta.lastRefreshError = payload.error || "Could not delete interest";
+  let payload;
+  try {
+    payload = await parseApiResponse(response);
+  } catch (error) {
+    state.meta.lastRefreshError = error.message || "Could not delete interest";
     renderStatus();
     return;
   }
@@ -341,9 +339,7 @@ async function loadTutorials() {
   );
 
   try {
-    const response = await apiFetch(`/api/tutorials?${params}`);
-    const payload = await response.json();
-    if (!response.ok) throw new Error(payload.error || "Could not load tutorials");
+    const payload = await parseApiResponse(await apiFetch(`/api/tutorials?${params}`));
 
     state.tutorials = payload.tutorials || [];
     state.facets = payload.facets || { topics: [], channels: [] };
@@ -360,19 +356,17 @@ async function refreshTutorials() {
   els.refreshButton.disabled = true;
 
   try {
-    const response = await apiFetch(`/api/interests/${encodeURIComponent(state.activeInterestId)}/refresh`, {
+    await parseApiResponse(await apiFetch(`/api/interests/${encodeURIComponent(state.activeInterestId)}/refresh`, {
       method: "POST"
-    });
-    const payload = await response.json();
-
-    if (!response.ok) {
-      throw new Error(payload.error || "Refresh failed");
-    }
+    }));
 
     await loadInterests();
     await loadTutorials();
   } catch (error) {
     state.meta.lastRefreshError = error.message;
+    if (error.details?.meta) {
+      state.meta = { ...state.meta, ...error.details.meta };
+    }
     renderStatus();
   } finally {
     els.refreshButton.classList.remove("is-loading");
@@ -391,9 +385,11 @@ async function toggleSelected(field) {
     body: JSON.stringify({ [field]: nextValue })
   });
 
-  const payload = await response.json();
-  if (!response.ok) {
-    state.meta.lastRefreshError = payload.error || "Could not save state";
+  let payload;
+  try {
+    payload = await parseApiResponse(response);
+  } catch (error) {
+    state.meta.lastRefreshError = error.message || "Could not save state";
     renderStatus();
     return;
   }
@@ -629,8 +625,12 @@ function renderResults() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ [action]: !tutorial[action] })
       });
-      const payload = await response.json();
-      if (response.ok) updateTutorialInState(payload.tutorial);
+      try {
+        const payload = await parseApiResponse(response);
+        updateTutorialInState(payload.tutorial);
+      } catch (error) {
+        state.meta.lastRefreshError = error.message;
+      }
       render();
     });
   });
@@ -810,4 +810,24 @@ function escapeHtml(value = "") {
 
 function escapeAttribute(value = "") {
   return escapeHtml(value).replace(/`/g, "&#096;");
+}
+
+async function parseApiResponse(response) {
+  const payload = await response.json().catch(() => ({}));
+
+  if (payload && typeof payload === "object" && "ok" in payload) {
+    if (response.ok && payload.ok) {
+      return payload.data || {};
+    }
+
+    const error = new Error(payload.error?.message || "Request failed");
+    error.details = payload.error?.details;
+    throw error;
+  }
+
+  if (!response.ok) {
+    throw new Error(payload.error || "Request failed");
+  }
+
+  return payload;
 }

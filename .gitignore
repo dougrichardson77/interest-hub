@@ -7,3 +7,6 @@ coverage/
 data/tutorials.json
 .server.log
 .server.pid
+.tools/
+*.xcuserstate
+**/xcuserdata/

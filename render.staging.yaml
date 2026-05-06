@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: interest-tutorial-hub
+    name: interest-tutorial-hub-staging
     runtime: node
     plan: starter
     buildCommand: npm install
@@ -9,7 +9,7 @@ services:
       - key: NODE_VERSION
         value: 20
       - key: APP_ENV
-        value: production
+        value: staging
       - key: APP_VERSION
         value: 0.1.0
       - key: MIN_CLIENT_VERSION

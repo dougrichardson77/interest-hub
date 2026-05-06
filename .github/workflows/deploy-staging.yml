@@ -1,0 +1,21 @@
+name: Deploy Staging
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: Trigger Render Staging Deploy
+        env:
+          RENDER_STAGING_DEPLOY_HOOK: ${{ secrets.RENDER_STAGING_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$RENDER_STAGING_DEPLOY_HOOK" ]; then
+            echo "Missing RENDER_STAGING_DEPLOY_HOOK secret"
+            exit 1
+          fi
+          curl -fsS -X POST "$RENDER_STAGING_DEPLOY_HOOK"

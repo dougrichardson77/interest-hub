@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>CFBundleDevelopmentRegion</key>
+  <string>$(DEVELOPMENT_LANGUAGE)</string>
+  <key>CFBundleExecutable</key>
+  <string>$(EXECUTABLE_NAME)</string>
+  <key>CFBundleIdentifier</key>
+  <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+  <key>CFBundleInfoDictionaryVersion</key>
+  <string>6.0</string>
+  <key>CFBundleName</key>
+  <string>$(PRODUCT_NAME)</string>
+  <key>CFBundlePackageType</key>
+  <string>APPL</string>
+  <key>CFBundleShortVersionString</key>
+  <string>$(MARKETING_VERSION)</string>
+  <key>CFBundleVersion</key>
+  <string>$(CURRENT_PROJECT_VERSION)</string>
+  <key>LSRequiresIPhoneOS</key>
+  <true/>
+  <key>UIApplicationSceneManifest</key>
+  <dict>
+    <key>UIApplicationSupportsMultipleScenes</key>
+    <false/>
+  </dict>
+  <key>UILaunchScreen</key>
+  <dict/>
+  <key>UISupportedInterfaceOrientations</key>
+  <array>
+    <string>UIInterfaceOrientationPortrait</string>
+    <string>UIInterfaceOrientationLandscapeLeft</string>
+    <string>UIInterfaceOrientationLandscapeRight</string>
+  </array>
+
+  <key>API_BASE_URL</key>
+  <string>https://interest-hub-doug.onrender.com</string>
+  <key>SUPABASE_URL</key>
+  <string>https://kmmwexvucbhuxsxzwpkn.supabase.co</string>
+  <key>SUPABASE_ANON_KEY</key>
+  <string>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImttbXdleHZ1Y2JodXhzeHp3cGtuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0NTI3NTQsImV4cCI6MjA5MzAyODc1NH0.ykaz8jjzZiADpIRooHTU46Ojpk2G0piW-ivM7E5TOwE</string>
+  <key>SUPABASE_MAGIC_LINK_REDIRECT_URL</key>
+  <string>interesthub://auth/callback</string>
+
+  <key>CFBundleURLTypes</key>
+  <array>
+    <dict>
+      <key>CFBundleURLName</key>
+      <string>com.momentum.interesthub.auth</string>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>interesthub</string>
+      </array>
+    </dict>
+  </array>
+</dict>
+</plist>

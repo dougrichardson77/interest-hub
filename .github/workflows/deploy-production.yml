@@ -1,0 +1,24 @@
+name: Deploy Production
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "Why are you deploying?"
+        required: true
+        type: string
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Trigger Render Production Deploy
+        env:
+          RENDER_PRODUCTION_DEPLOY_HOOK: ${{ secrets.RENDER_PRODUCTION_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$RENDER_PRODUCTION_DEPLOY_HOOK" ]; then
+            echo "Missing RENDER_PRODUCTION_DEPLOY_HOOK secret"
+            exit 1
+          fi
+          curl -fsS -X POST "$RENDER_PRODUCTION_DEPLOY_HOOK"

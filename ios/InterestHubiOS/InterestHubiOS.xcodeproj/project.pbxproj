@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		E45647C5CCBDE8C95EC81040 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BABBBCDF160E654A6AA7F9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9B1D01D5DA1814FBA40B0E4;
+			remoteInfo = InterestHubiOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		959BE2054BF35358421B6E18 /* InterestHubiOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = InterestHubiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC48A222F608DB7820CEBDC5 /* InterestHubiOSTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = InterestHubiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F2EF8EA08054299B5D5B3920 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				App/Info.plist,
+			);
+			target = C9B1D01D5DA1814FBA40B0E4 /* InterestHubiOS */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		0DA71BB6B6C17DA0DB11398F /* Tests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		93C408E8AA3511EA1E2E4624 /* Sources */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F2EF8EA08054299B5D5B3920 /* PBXFileSystemSynchronizedBuildFileExceptionSet */,
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXGroup section */
+		5DEE05F03C459D72207394D6 = {
+			isa = PBXGroup;
+			children = (
+				93C408E8AA3511EA1E2E4624 /* Sources */,
+				0DA71BB6B6C17DA0DB11398F /* Tests */,
+				936A96D64DAD197479B0FFFC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		936A96D64DAD197479B0FFFC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				959BE2054BF35358421B6E18 /* InterestHubiOS.app */,
+				EC48A222F608DB7820CEBDC5 /* InterestHubiOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9F34A1E1E8930ADB3FF638D2 /* InterestHubiOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC0AC8CC894473D328DE677A /* Build configuration list for PBXNativeTarget "InterestHubiOSTests" */;
+			buildPhases = (
+				D4CCCDF917BBDA13A4BF07D4 /* Sources */,
+				E2E6B07B40E8BA5B50F5CA9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93EBFBE26D3A87273C733C4A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				0DA71BB6B6C17DA0DB11398F /* Tests */,
+			);
+			name = InterestHubiOSTests;
+			packageProductDependencies = (
+			);
+			productName = InterestHubiOSTests;
+			productReference = EC48A222F608DB7820CEBDC5 /* InterestHubiOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C9B1D01D5DA1814FBA40B0E4 /* InterestHubiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB33CE2AAA4010B28291A307 /* Build configuration list for PBXNativeTarget "InterestHubiOS" */;
+			buildPhases = (
+				27D8B5DE6B2E24AF257AE51C /* Sources */,
+				935242BE325A3CA83B6E8CD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				93C408E8AA3511EA1E2E4624 /* Sources */,
+			);
+			name = InterestHubiOS;
+			packageProductDependencies = (
+			);
+			productName = InterestHubiOS;
+			productReference = 959BE2054BF35358421B6E18 /* InterestHubiOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5BABBBCDF160E654A6AA7F9C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 6A29F6F768ED1A155DD01FB5 /* Build configuration list for PBXProject "InterestHubiOS" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 5DEE05F03C459D72207394D6;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 936A96D64DAD197479B0FFFC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9B1D01D5DA1814FBA40B0E4 /* InterestHubiOS */,
+				9F34A1E1E8930ADB3FF638D2 /* InterestHubiOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		935242BE325A3CA83B6E8CD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2E6B07B40E8BA5B50F5CA9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27D8B5DE6B2E24AF257AE51C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4CCCDF917BBDA13A4BF07D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		93EBFBE26D3A87273C733C4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9B1D01D5DA1814FBA40B0E4 /* InterestHubiOS */;
+			targetProxy = E45647C5CCBDE8C95EC81040 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2D363D9F127EE7569E8DD474 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		432F6F6B31F579D6618A8CA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		52E29206EBD9792A1C379B13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = Sources/App/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.momentum.interesthub;
+			};
+			name = Debug;
+		};
+		5D070C749D64C185D4066B11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.momentum.interesthub.Tests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InterestHubiOS.app/InterestHubiOS";
+			};
+			name = Debug;
+		};
+		A204C451CEE61F8AAAD02B78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = Sources/App/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.momentum.interesthub;
+			};
+			name = Release;
+		};
+		B3327B0AEB19E3974E9D06A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GENERATE_INFOPLIST_FILE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.momentum.interesthub.Tests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InterestHubiOS.app/InterestHubiOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6A29F6F768ED1A155DD01FB5 /* Build configuration list for PBXProject "InterestHubiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D363D9F127EE7569E8DD474 /* Debug */,
+				432F6F6B31F579D6618A8CA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BC0AC8CC894473D328DE677A /* Build configuration list for PBXNativeTarget "InterestHubiOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D070C749D64C185D4066B11 /* Debug */,
+				B3327B0AEB19E3974E9D06A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DB33CE2AAA4010B28291A307 /* Build configuration list for PBXNativeTarget "InterestHubiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52E29206EBD9792A1C379B13 /* Debug */,
+				A204C451CEE61F8AAAD02B78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5BABBBCDF160E654A6AA7F9C /* Project object */;
+}
